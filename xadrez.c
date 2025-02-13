@@ -28,5 +28,43 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    return 0;
+// Definição dos movimentos máximos de cada peça
+const int movimentoBispo = 5;
+const int movimentoTorre = 5;
+const int movimentoRainha = 8;
+char peca;
+
+printf("Qual peça você quer movimentar? (B para Bispo, T para Torre, R para Rainha)\n");
+scanf(" %c", &peca);
+
+// Movimentação da Torre: 5 casas para a direita
+if (peca == 'T' || peca == 't') {
+    int i = 1;
+    while (i <= movimentoTorre) {
+        printf("Torre se movimentando para a Direita - Casa B%d\n", i);
+        i++;
+    }
+} 
+// Movimentação do Bispo: 5 casas na diagonal superior direita
+else if (peca == 'B' || peca == 'b') {
+    int i = 1;
+    while (i <= movimentoBispo) {
+        char coluna = 'B' + (i - 1); // Ajusta a coluna da casa na diagonal
+        printf("Bispo se movimentando para casa %c%d (Diagonal Superior Direita)\n", coluna, i);
+        i++;
+    }
+} 
+// Movimentação da Rainha: 8 casas para a esquerda
+else if (peca == 'R' || peca == 'r') {
+    int i = 1;
+    while (i <= movimentoRainha) {
+        printf("Rainha se movimentando para a Esquerda - Casa %d\n", i);
+        i++;
+    }
+} 
+else {
+    printf("Peça inválida! Escolha B, T ou R.\n");
+}
+
+return 0;
 }
